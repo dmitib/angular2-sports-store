@@ -1,21 +1,33 @@
 import {NgModule } from '@angular/core';
 import {FormsModule } from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import {ModelModule } from '../model/model.module';
 import {StoreComponent } from './store.component';
 import {CounterDirective} from './counter.directive';
+import { CartSummaryComponent } from './cartSummary.component';
+import { CartDetailComponent } from './cartDetail.component';
+import { CheckoutComponent } from './checkout.component';
 
 @NgModule({
     imports: [
         ModelModule,
         BrowserModule,
-        FormsModule
+        FormsModule,
+        RouterModule
     ],
     declarations: [
         StoreComponent,
-        CounterDirective
+        CounterDirective,
+        CartSummaryComponent,
+        CartDetailComponent,
+        CheckoutComponent
     ],
-    exports: [StoreComponent]
+    exports: [
+        StoreComponent,
+        CartDetailComponent,
+        CheckoutComponent
+    ]
 })
 export class StoreModule { }
